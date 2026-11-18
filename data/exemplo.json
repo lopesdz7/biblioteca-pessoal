@@ -1,0 +1,20 @@
+{
+  "versao": 1,
+  "livros": [
+    { "titulo": "Duna", "autor": "Frank Herbert", "ano": 1965, "categoria": "Ficção científica", "status": "nao_lido" },
+    { "titulo": "Neuromancer", "autor": "William Gibson", "ano": 1984, "categoria": "Ficção científica", "status": "nao_lido" },
+    { "titulo": "Fundação", "autor": "Isaac Asimov", "ano": 1951, "categoria": "Ficção científica", "status": "lido", "avaliacao": 5 },
+    { "titulo": "Eu, Robô", "autor": "Isaac Asimov", "ano": 1950, "categoria": "Ficção científica", "status": "lido", "avaliacao": 4 },
+    { "titulo": "Projeto Hail Mary", "autor": "Andy Weir", "ano": 2021, "categoria": "Ficção científica", "status": "lido" },
+    { "titulo": "1984", "autor": "George Orwell", "ano": 1949, "categoria": "Distopia", "status": "lido", "avaliacao": 5 },
+    { "titulo": "A Revolução dos Bichos", "autor": "George Orwell", "ano": 1945, "categoria": "Fábula", "status": "lido", "avaliacao": 4 },
+    { "titulo": "Dom Casmurro", "autor": "Machado de Assis", "ano": 1899, "categoria": "Romance", "status": "lido", "avaliacao": 5, "observacoes": "Capitu traiu ou não traiu?" },
+    { "titulo": "Memórias Póstumas de Brás Cubas", "autor": "Machado de Assis", "ano": 1881, "categoria": "Romance", "status": "lendo" },
+    { "titulo": "Grande Sertão: Veredas", "autor": "Guimarães Rosa", "ano": 1956, "categoria": "Romance", "status": "nao_lido" },
+    { "titulo": "A Hora da Estrela", "autor": "Clarice Lispector", "ano": 1977, "categoria": "Romance", "status": "lido", "avaliacao": 3 },
+    { "titulo": "O Hobbit", "autor": "J.R.R. Tolkien", "ano": 1937, "categoria": "Fantasia", "status": "lido", "avaliacao": 4 },
+    { "titulo": "Clean Code", "autor": "Robert C. Martin", "ano": 2008, "isbn": "978-0132350884", "categoria": "Programação", "status": "lendo" },
+    { "titulo": "The Pragmatic Programmer", "autor": "Andrew Hunt", "ano": 1999, "categoria": "Programação", "status": "lido", "avaliacao": 5 },
+    { "titulo": "Eloquent Ruby", "autor": "Russ Olsen", "ano": 2011, "categoria": "Programação", "status": "nao_lido" }
+  ]
+}

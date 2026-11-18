@@ -1,0 +1,5 @@
+# Dados pessoais de cada usuário (o exemplo fica versionado)
+data/biblioteca.json
+data/*.tmp
+.bundle/
+vendor/

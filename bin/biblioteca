@@ -1,0 +1,32 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# Biblioteca Pessoal: rode com `bundle exec ruby bin/biblioteca`
+# Opções:
+#   --exemplo   carrega livros de exemplo se a biblioteca estiver vazia
+#   BIBLIOTECA_ARQUIVO=caminho.json   usa outro arquivo de dados
+
+require "bundler/setup"
+require_relative "../lib/biblioteca"
+
+raiz = File.expand_path("..", __dir__)
+caminho = ENV.fetch("BIBLIOTECA_ARQUIVO", File.join(raiz, "data", "biblioteca.json"))
+
+begin
+  repositorio = Biblioteca::RepositorioJson.new(caminho)
+  acervo = Biblioteca::Acervo.new(repositorio.carregar)
+
+  # Callback: toda alteração no acervo é gravada no JSON na hora.
+  acervo.ao_alterar { |_evento, _livro| repositorio.salvar(acervo) }
+
+  if ARGV.include?("--exemplo") && acervo.vazio?
+    exemplos = Biblioteca::RepositorioJson.new(File.join(raiz, "data", "exemplo.json")).carregar
+    exemplos.each { |livro| acervo.adicionar(livro.atributos) }
+  end
+
+  $stdout.sync = true
+  Biblioteca::CLI.new(acervo: acervo, arquivo: File.basename(caminho)).executar
+rescue Biblioteca::ErroArquivo => e
+  warn "❌ #{e.message}"
+  exit 1
+end
